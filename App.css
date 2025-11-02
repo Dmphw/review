@@ -1,0 +1,215 @@
+/* src/styles/showmax.css – Showmax-Inspired Theme */
+
+/* === Global Reset & Base === */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0F1419 0%, #121212 100%); /* Dark gradient bg */
+  color: #FFFFFF;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #FFFFFF;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Subtle shadow for depth */
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* === Navbar (Showmax-style header) === */
+.navbar {
+  background: rgba(15, 20, 25, 0.95) !important; /* Semi-transparent dark */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border-bottom: 1px solid #333;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #FFD700 !important; /* Gold accent */
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.nav-link {
+  color: #FFFFFF !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #FFD700 !important;
+  transform: translateY(-1px);
+}
+
+/* === Container & Layout === */
+.container {
+  max-width: 1200px;
+  padding: 2rem 1rem;
+}
+
+/* === Cards (Movie posters & Reviews) === */
+.card {
+  background: #1f1f1f; /* Dark card bg */
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #FFFFFF;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+}
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0; /* Square corners for media feel */
+}
+
+.card-body {
+  padding: 1.5rem;
+  background: linear-gradient(to bottom, transparent, #1f1f1f); /* Fade effect */
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+/* === Buttons (CTA like Showmax "Watch Now") === */
+.btn-primary {
+  background: linear-gradient(135deg, #FFD700, #FFA500); /* Gold-orange gradient */
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+  background: linear-gradient(135deg, #FFA500, #FFD700);
+}
+
+.btn-outline-primary {
+  border-color: #FFD700;
+  color: #FFD700;
+}
+
+.btn-outline-primary:hover {
+  background: #FFD700;
+  color: #000;
+}
+
+.btn-danger {
+  background: #E50914; /* Showmax red for delete */
+  border: none;
+}
+
+.btn-danger:hover {
+  background: #B20710;
+}
+
+/* === Forms (Login/Signup/Review) === */
+.form-control, .form-range {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #FFFFFF;
+  padding: 0.75rem;
+}
+
+.form-control:focus {
+  background: #333;
+  border-color: #FFD700;
+  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+  color: #FFFFFF;
+}
+
+.form-control::placeholder {
+  color: #888;
+}
+
+/* === Movie Detail Page === */
+.movie-detail {
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.poster-img {
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+/* === Review List & Profile === */
+.review-item {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #FFD700; /* Gold accent line */
+}
+
+.badge {
+  background: #FFD700;
+  color: #000;
+  font-weight: 500;
+}
+
+/* === Modal (Edit Review) === */
+.modal-content {
+  background: #1f1f1f;
+  border: none;
+  border-radius: 12px;
+  color: #FFFFFF;
+}
+
+.modal-header {
+  border-bottom: 1px solid #333;
+  color: #FFFFFF;
+}
+
+/* === Loading & Empty States === */
+.text-muted {
+  color: #888 !important;
+}
+
+.alert {
+  border-radius: 8px;
+  border: none;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .container { padding: 1rem; }
+  h1 { font-size: 2rem; }
+  .card-img-top { height: 200px; }
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card, .review-item {
+  animation: fadeIn 0.5s ease-out;
+}
